@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import model.builder.IceCreamOrderBuilder;
 import model.chain.IceCreamCustomizationHandler;
 import model.observer.OrderObserver;
 
@@ -18,6 +19,22 @@ public class IceCreamOrder {
     
    private String date;
    private Double amoount;
+   
+   public IceCreamOrder addToppings(List<String> topping) {
+        if (toppings == null) {
+            toppings = new ArrayList<>();
+        }
+        toppings.addAll(topping);
+        return this;
+    }
+
+    public IceCreamOrder addSyrups(List<String> syrup) {
+        if (syrups == null) {
+            syrups = new ArrayList<>();
+        }
+        syrups.addAll(syrup);
+        return this;
+    }
 
     public String getDate() {
         return date;

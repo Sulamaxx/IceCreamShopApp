@@ -92,6 +92,7 @@ public class FlavorHandler implements IceCreamCustomizationHandler {
                     TimeUnit timeUnit = TimeUnit.SECONDS;
 
                     future.get(timeout, timeUnit);
+                    
                 } catch (TimeoutException e) {
 
                     System.err.println("Task did not complete within the specified timeout.");
